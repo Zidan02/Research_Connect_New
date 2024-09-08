@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        .list {
+            column-gap: 1vw;
+        }
+
+        body {
+            font-family: 'Inria Serif';
+        }
+
+        .dropdown-item {
+            --bs-dropdown-link-active-bg: #B6BAD8;
+        }
+
+        .form-control {
+            background-color: #ACDDFD;
+        }
+    </style>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-warn">
+        <div class="container-fluid pt-2 m-2">
+            <div style="margin-top: 1%;">
+                <a class="navbar-brand" href="landing-home.html">
+                    <img src="img/logo1.png" alt="Logo" class="img-fluid" style="width: 60%; height: auto;">
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse border-dark border-bottom col-md-6 navbarNavDropdown"
+                id="navbarNavDropdown" style="margin-left: 5%; width:auto; margin-top: -5%;">
+                <ul class="navbar-nav list">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Collaboration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Connection</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Need Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Webinars/ conference</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse navbarNavDropdown" style="margin-left:5%; margin-top: -4%;">
+                <ul class="navbar-nav list">
+                    <li class="nav-item">
+                        <div class="btn-group">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="profile\default.png" class="avatar img-fluid" alt=""
+                                    style="height: 3rem; width: 3rem;">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="userProfile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="editProfile.html">Settings</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" class="text-decoration-none"><button class="btn me-2 rounded-4" name="signout"
+                                id="signout" type="button" style="float:right; background: #1E3668; color: white;"> Log
+                                Out </button></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- profile section start -->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- user information start -->
+
+                <div class="col-md-2">
+                    <!-- Button trigger modal stat-->
+                    <button type="button" class="btn text-white m-1 shadow" data-bs-toggle="offcanvas"
+                        data-bs-target="#createPost" aria-controls="createPost"
+                        style=" background: #1E3668; width: 80%;">
+                        <span class="fw-bold fs-5">+</span>NEW
+                    </button>
+
+
+                    <div class="offcanvas offcanvas-start rounded-4" data-bs-scroll="true" data-bs-backdrop="true"
+                        tabindex="-1" id="createPost" aria-labelledby="createPostLabel"
+                        style=" width: 20%; height: fit-content; margin-top: 11%;background: #1E3668; margin-left: 1%;">
+
+                        <div class="offcanvas-body rounded-2 ">
+                            <ul style="list-style-type: none;">
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#postForm">Post</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#paperForm"
+                                        data-bs-dismiss="modal">Paper</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#needPostForm"
+                                        data-bs-dismiss="modal">Need Post</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#questionForm"
+                                        data-bs-dismiss="modal">Question</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#collabForm"
+                                        data-bs-dismiss="modal">Collaboration</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-transparent border-0 text-light"
+                                        data-bs-toggle="modal" data-bs-target="#jobPostForm" data-bs-dismiss="modal">Job
+                                        Post</button>
+                                    <hr class="border border-secondary border-1 opacity-75">
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- userimg start -->
+                    <form method="post">
+                        <div class="card rounded-4 border-0 align-items-center mt-4">
+                            <img src="profile\default.png" class="card-img-top img-fluid " alt="img"
+                                style=" width: 40%; height: 40%; margin-left: -15%;">
+                            <div class="card-body d-flex flex-column   rounded-4">
+                                <p class="card-text fw-semibold" style="color: #1E3668;"> <i>Mansora Akter Bithe </i>
+                                </p>
+                                <p class="card-text text-left fw-semibold" style="color: #595858; margin-top: -10%;">
+                                    Student</p>
+                                <p class="card-text text-left " style="color: #595858; margin-top: -10%;">United
+                                    International University</p>
+                            </div>
+                        </div>
+                        <!-- userimage end -->
+                        <!-- user description start -->
+                        <div class="card text-left text-secondary rounded-4 border-0">
+                            <div class="card-body text-left align-item-center rounded-4"
+                                style=" background-color: white; margin-top: 1rem; margin-bottom: 1rem;">
+                                <div class="d-flex"><img src="img\network.png" class="img-fluid"
+                                        style="width: 15%; height: 25%; padding-top: 5%;" alt="network">
+                                    <p class="card-text fs-5 fw-semibold" style="margin-left: 10%; color: #1E3668;">
+                                        Network</p>
+                                </div>
+                                <div class="d-flex mt-4">
+                                    <p class="card-text fs-5 " style="color: #1E3668;">
+                                        Followers</p>
+                                    <p class="card-text fs-5 " style="margin-left: 20%; color: #1E3668;">
+                                        10</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="card-text fs-5 " style="color: #1E3668;">
+                                        Followings</p>
+                                    <p class="card-text fs-5 " style="margin-left: 20%; color: #1E3668;">
+                                        2</p>
+                                </div>
+
+
+                            </div>
+
+                            <div class="card-body rounded-4" style=" background-color: white;  margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <div class="contact">
+                                        <div class="phone d-flex" style="margin-top: 1.5rem;">
+                                            <img src="img\phnic.png" alt="phnic" class="img-fluid rounded-5"
+                                                style="height: 2.5rem; width: 2.5rem;">
+                                            <input type="tel" class="form-control border-0 shadow rounded-2"
+                                                name="phone" id="phone" placeholder="+8801XXXXXXXXX"
+                                                style="padding: 0.5rem; font-size: 0.7rem;" readonly>
+
+                                        </div>
+                                        <hr class="border-2">
+                                        <div class="email d-flex" style="margin-top: 1rem;">
+                                            <img src="img\emic.png" alt="emic" class="img-fluid rounded-5"
+                                                style="height: 2.5rem; width: 2.5rem;">
+                                            <input type="email" class="form-control border-0 shadow rounded-2"
+                                                name="email" id="email" placeholder="Enter your email address"
+                                                style="padding: 0.5rem; font-size: 0.7rem;" readonly>
+
+                                        </div>
+                                        <hr class="border-2">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- user contact end -->
+                            <!-- user social media start -->
+                            <section class="mb-4 bg-light">
+                                <!-- Facebook -->
+                                <a href=""><img src="img\fb-land.png" alt="Facebook" class="shadow img-fluid "
+                                        style="width: 13%; margin-left: 5%;"></a>
+
+                                <!-- Instagram -->
+                                <a href=""><img src="img\insta-land.png" alt="Instagram" class="shadow img-fluid"
+                                        style="width: 13%; margin-left: 5%;"></a>
+
+                                <!-- Linkedin -->
+                                <a href=""><img src="img\link-land.png" alt="Linkedin" class="shadow img-fluid"
+                                        style="width: 13%; margin-left: 5%;"></a>
+
+                                <!-- Twitter -->
+                                <img src="img\twit-land.png" alt="Facebook" class="shadow img-fluid"
+                                    style="width: 13%; margin-left: 5%;">
+                                <!-- Github -->
+                                <img src="img\github.png" alt="Github" class="shadow img-fluid"
+                                    style="width: 13%; margin-left: 5%;">
+
+
+                            </section>
+                            <!-- user social media end -->
+                        </div>
+                        <!-- user description end -->
+                    </form>
+                </div>
+
+
+                <!-- user information end -->
+
+                <!-- post information start -->
+                <div class="col-md-10">
+                    <!-- Account details card-->
+                    <div class="container">
+                        <div class="card mb-4 border-0">
+
+                            <div class="card-header h3 bg-transparent border-bottom border-1 border-dark-subtle fw-semibold"
+                                style="padding-left: 2.5%;">
+                                <img src="img\post.png" alt="Icon Image" class="icon-img"> Posts
+                            </div>
+                            <div class="card-body ">
+                                <div class=" border-bottom border-0 border-dark-subtle rounded-0">
+
+                                    <div class="d-flex">
+                                        <img src="profile\default.png" class="card-img-top img-fluid  me-3" alt="img"
+                                            style=" width: 40%; height: 40%; width: 5%;">
+                                        <!-- Content for POST collapse -->
+
+
+
+                                        <p class="card-title fs-5 fw-semibold">Lorem ipsum dolor sit, amet consectetur
+                                            adipisicing elit.
+                                            Repellendus vero voluptas voluptate eum eligendi, harum enim aut dolores
+                                            maiores
+                                            officia!</p>
+                                    </div>
+
+                                    <div class="ms-5 ps-3">
+                                        <a href="link_to_profile" class="text-decoration-none">
+                                            <span class="text-primary fs-6">Authors:<span class="ms-3">Mansora
+                                                    Akter Bithe</span></span>
+                                        </a>
+
+                                        <p class="text-primary fs-6">Published:<span class="ms-3">Jul 7, 2024 <span
+                                                    class="ms-2">11 AM</span></span></p>
+                                    </div>
+
+
+                                    <div class="card-text d-flex justify-content-between mb-3 ms-5 ps-3 me-4">
+                                        <button class="btn border-1 rounded-5 "
+                                            style="background: #ACDDFD; border-color: #1E3668; font-size: small;">Physics</button>
+
+                                        <div class="d-flex justify-content-end gap-2" style="float: right;">
+
+                                            <button class="btn border-2 rounded-5 fs-6 px-4"
+                                                style="background: #FEF067; border-color: #1E3668; ">
+                                                <img src="img/comment.png" alt="comment" class="img-fluid"
+                                                    style="width: 20px; height: 15px;">
+                                            </button>
+
+                                            <button class="btn border-2 rounded-5 fs-6 d-flex align-middle"
+                                                style="background: #FEF067; border-color: #1E3668;">
+                                                <img src="img/save.png" alt="" class="img-fluid mt-1 me-2"
+                                                    style="width: 15px; height: 15px;"> <span>Save</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container border-0 ">
+                                    <p class="fw-light fs-6 ms-5 ps-3 me-1">Abstract Background: Patients receiving
+                                        radiotherapy often experience
+                                        cancer-related fatigue and insomnia. These experiences negatively affect
+                                        patients’ physiological and psychological well-being. The study aims to evaluate
+                                        the effectiveness of pranayama and deep breathing exercise in reducing fatigue
+                                        and insomnia in patients receiving radiotherapy due to breast cancer. Materials
+                                        and methods: This randomized controlled interventional study was carried out
+                                        with 60 patients divided into the pranayama (20), deep breathing exercise (20)
+                                        and control group (20). Data were collected with the Piper Fatigue Scale (PFS),
+                                        the Pittsburgh Sleep Quality Index (PSQI) and the Visual Analog Scale (VAS).</p>
+                                </div>
+                                <div class="container">
+                                    <div class="rounded-3 pb-4 shadow"
+                                        style="background-color: #ACDDFD; margin-left: 5.5%;">
+                                        <p class="fs-5 fw-semibold ms-2 pt-1">Comment</p>
+                                        <div class="form-floating  d-flex" style="margin-top: -2%;">
+                                            <img src="profile\default.png" class="avatar img-fluid me-1 ms-2 mt-2"
+                                                alt="" style="height: 1.5rem; width: 1.5rem;">
+                                            <textarea class="form-control border-0" placeholder="Leave a comment here"
+                                                id="floatingTextarea"
+                                                style="outline: none; box-shadow: none; background-color: #ACDDFD; height: 60px;"></textarea>
+
+
+                                            <label for="floatingTextarea" class="ms-5">Add your Comments</label>
+
+
+
+                                        </div>
+                                        <hr class=" mt-1 border-1 border-secondary">
+                                        <button class="btn btn-sm text-uppercase text-light rounded-3 shadow me-2"
+                                            type="submit" name="comment"
+                                            style="background-color: #1E3668; font-size: x-small; float: inline-end; margin-top: -1%;">Send</button>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="container mt-5">
+                                    <div class="rounded-3 pb-4 "
+                                        style=" margin-left: 5.5%;">
+                                        
+                                        <div class=" d-flex" style="margin-top: -2%;">
+                                            <img src="profile\default.png" class="avatar img-fluid me-1 ms-2 " alt=""
+                                                style="height: 1.5rem; width: 1.5rem;">
+                                            <div>
+                                                <p class="card-text " style="color: #1E3668;"> Mansora Akter Bithe
+                                                </p>
+                                                <p class="text" style="margin-top: -13%; font-size: smaller;">Jul 7,
+                                                    2024
+                                                    <span class="ms-2">11 AM</span>
+                                                </p>
+                                            </div>
+
+
+
+
+                                        </div>
+                                        <p class="ms-4 ps-2">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut labore et dolore magna aliqua?
+                                        </p>
+                                        <hr class=" mt-1 border-1 border-secondary">
+                                        <button class="btn btn-sm text-uppercase text-dark rounded-3 shadow me-2 d-flex"
+                                            type="submit" name="comment"
+                                            style="background-color: #ACDDFD; font-size: x-small; float: inline-end; margin-top: -1%;"><img src="img/reply.png" alt="" class="mt-1 me-1">Reply</button>
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <style>
+            /* Change placeholder background color */
+            .form-control-custom {
+                background-color: #ACDDFD;
+                outline: none;
+                box-shadow: none;
+            }
+
+            .custom-file-input {
+                background-color: #ACDDFD;
+            }
+        </style>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+            </script>
+</body>
+
+</html>
